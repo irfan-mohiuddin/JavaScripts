@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+        body {
+            font-family: 'Inconsolate', sans-serif;
+            background: #2a364f;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: azure;
+        }
+
+        button {
+            display: inline-block;
+            background-color: #F8b627;
+            color: aliceblue;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 10px 22px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        p,form {
+            text-align: center;
+            color: rgba(red, green, blue, alpha);
+        }
+
+        h1 {
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    
+    <p class = "line">This is the first line</p>
+    <p class = "line">This is the second line</p>
+    <p class = "line">This is the third line</p>
+    <h1 id = "heading">change the content of h1</h1>
+
+    
+    <form action = "">
+        <label for="">male</label>
+        <input type="radio" name="gender" id="">
+        <label for="">female</label>
+        <input type="radio" name="gender" id="">
+        <label for="">transgender</label>
+        <input type="radio" name="transgender" id="">
+    </form>
+    <br>
+
+    <button onclick="changeContent()">Click Me</button>
+    
+    <script>
+        let count = 0;
+        const changeContent = () => {
+            count++;
+            // document.getElementById("heading").innerHTML = `you have clicked me ${count} time`;
+            document.querySelector('#heading').innerHTML = `you have clicked me ${count} time`;
+            document.querySelector(".line").innerHTML = `You are using querySelectorAll, due to which all same class innerHTML got changed`;
+            document.querySelectorAll(".line").innerHTML = `You are using querySelectorAll, due to which all same class innerHTML got changed`;
+            //return `you have clicked me ${count} time`;
+        }
+    </script>
+
+</body>
+</html>
