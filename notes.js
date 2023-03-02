@@ -934,7 +934,7 @@ console.log(typeof(myAge)); */
 //                                               ---------------------------
 /*
     Window vs Document
-         Window
+        Window
             1. Window is the main Container or we can say the Global Object and any operations related to entire browser window can be a part of window object.
             2. All the members like objects, methods or properties if they are the part of widows object then we do not refer the windows object.
             3. Windows has methods, properties, objects. ex settime() or setinterval() are the methods where as Document is the object of the window and it also has a screen object with properties describing the physical display.
@@ -943,7 +943,64 @@ console.log(typeof(myAge)); */
             1. The DOM (Document Object Model) is a child of Window Object.
             2. Were in the DOM we need to refer the Document if we want to use the document object, methods or properties.
             3. Document is just a object of the global object that is window, which deals with the document and the HTML elements.
+
+    DOM vs BOM
+        DOM : The Dom is the Document Object Model, which deals with the document, the HTML eliments themselves.
+            Ex : change the backgrount color to red we use
+                document.body.style.background = "red";
+                    it applies the red background color to the whole body of HTML page.
+
+        BOM : It is a Brouser Object Model, which deals with the browser components aside from the document,
+            Like history, location, navigation, settings etc..,
+
+    DOM Navigation
+        1. document.documentElement --> returns the element that is the root element of the document.
+        2. document.head --> Returns the head element of HTML document
+        3. document.body --> Specifies the beginning to end of the document body
+        4. document.body.childNodes --> Returns the children of the body element in HTML (it includes as a child if it finds a single space, tab, Enter etc.,)
+        5. document.children --> Returns all the child elements of HTML page.
+        6. document.childNodes.length --> Returns the children count.
+        7. document.hasChildNodes() --> Returns boolean value whether node has children.
+        8. document.body.firstChild --> Returns the first child. (it includes text as a child if it finds a single space, tab, Enter etc.,)
+        9. document.body.firstElementChild --> Returns the first child that is an element, and null otherwise.
+        10. document.lastChild --> Returns the last child. (it includes text as a child if it finds a single space, tab, Enter etc.,)
+        11. document.body.lastElementChild --> Returns the last child that is an element, and null otherwise.
+        12. document.body.firstElementChild.lastElementChild.style.color = "Yellow"
+                basically it changes the color of (body -> firstchild -> lastchild) elements to yellow.
+        13. const childTwo = document.querySelector('.<query name ex: class name, id, .child-two>')
+                it assigns the related query to childTwo variable
+                childTwo.style.color = "red".
+        14. document.body.parentNode --> Returns the parent
+        15. document.body.parentElement --> Returns the parent element.
+        16. document.body.previousElementSibling --> Returns the first preceding sibling that is an element, and null otherwise.
+        17. document.body.nextElementSibling --> eturns the first following sibling that is an element, and null otherwise.
+        18. document.getElementById(elementId: string) --> Returns a reference to the first object with the specified value of the ID attribute.
+        19. document.getElementsByClassName(classNames: string)
+                Returns a HTMLCollection of the elements in the object on which the method was invoked (a document or an element) that have all the classes given by classNames. The classNames argument is interpreted as a space-separated list of classes.
+        20. document.getElementsByTagName("tag")
+                Retrieves a collection of objects based on the specified element name.
+        
+
+    Searching and getting Elements Reference
+        1. document.querySelector("#id-name or .class-name or tag")
+                Returns the first element that is a descendant of node that matches selectors.
+        2. document.querySelectorAll()
+                Returns all element descendants of node that match selectors.
+
+
 */
-    // DOM vs BOM
-    // DOM Navigation
-    // Searching and getting Elements Reference 
+
+    // windows.history.back() // used to open the previous page of the window or tab
+    console.log(`number of childs under first div : ${document.body.firstElementChild.childElementCount}`);
+    document.querySelectorAll()
+//====================================================================================================================================
+
+// ********************************************** Events in JavaScript *************************************************************
+//                                             ---------------------------
+
+/*  HTML Events are things that happen to HTML elements.
+    When JavaScript in HTML pages, JavaScript can react on these events.
+   
+    HTML Events : An HTML Event is some thing the browser dose. or something a user does
+
+*/
